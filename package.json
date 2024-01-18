@@ -3,7 +3,17 @@
   "type": "module",
   "main": "./src/index.ts",
   "scripts": {
-    "dev": "bun --watch run ./src/index.ts"
+    "dev": "bun --watch run ./src/index.ts",
+    "compose": "docker compose up --build --detach",
+    "build": "yarn clean; tsc",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "lint": "eslint ./src",
+    "start": "bun run src/index.ts",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "test": "jest --passWithNoTests --no-watch verbose",
+    "test:watch": "jest verbose"
   },
   "engines": {
     "node": ">=18"

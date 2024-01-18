@@ -1,17 +1,16 @@
-
 services:
   server:
     build:
-      context: ./server
+      context: ./
     environment:
       NODE_ENV: development
     ports:
       - 4000:4000
     volumes:
-      - ./server/src:/usr/app/src
+      - ./src:/usr/app/src
     depends_on:
       - mongodb
-      
+
   mongodb:
     image: mongo
     user: root

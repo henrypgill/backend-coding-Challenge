@@ -10,3 +10,8 @@ export interface Book {
     edition:  number;
     publishYear: number;
 }
+
+export interface Author {
+    _id: ObjectId;
+    name: string;
+}

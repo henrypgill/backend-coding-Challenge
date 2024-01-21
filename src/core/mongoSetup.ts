@@ -1,25 +1,22 @@
 import { MongoClient } from "mongodb";
-import type { Book } from "../types/book";
+import type { Author, Book, Publisher } from "../types/book";
 
 export type MongoDbConnection = ReturnType<typeof setupMongoClient>;
 
 export function setupMongoClient(database_url: string) {
-    
-    // try {
-        const client = new MongoClient(database_url);
+    const client = new MongoClient(database_url);
 
-        const db = client.db();
-        const books = db.collection<Book>("users");
+    const db = client.db();
+    const books = db.collection<Book>("books");
+    const authors = db.collection<Author>("authors");
+    const publishers = db.collection<Publisher>("publishers");
 
-        return {
-            client,
-            db,
-            books,
-        };
-
-    // } catch (error) {
-    //     console.error(error)
-    // }
-
+    return {
+        client,
+        db,
+        books,
+        authors,
+        publishers,
+    };
 
 }

@@ -15,3 +15,9 @@ export interface Author {
     _id: ObjectId;
     name: string;
 }
+
+export interface Publisher {
+    _id: ObjectId;
+    name: string;
+    location: string;
+}

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "bun --watch run ./src/index.ts",
     "compose": "docker compose up --build --detach",
-    "build": "yarn clean; tsc",
+    "build": "tsc",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "eslint",

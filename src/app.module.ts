@@ -1,11 +1,14 @@
-import { Module } from '@nestjs/common';
+import { Module, type MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { GBooksModule } from './googleBooks/gbooks.module';
+import { AppLoggerMiddleware } from './core/AppLogger';
 
 @Module({
-  imports: [GBooksModule],
+  imports: [],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer): void {
+      consumer.apply(AppLoggerMiddleware).forRoutes("*");
+  }}

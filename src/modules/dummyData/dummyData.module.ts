@@ -7,6 +7,8 @@ import { DummyDataController } from "./dummyData.controller";
 @Module({
     imports: [],
     controllers: [DummyDataController],
-    providers: [BooksService, AuthorsService, PublishersService],
+    providers: [
+        DummyDataService
+    ],
 })
 export class DummyDataModule {}

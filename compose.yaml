@@ -3,13 +3,14 @@ services:
         build:
             context: ./
         environment:
-            NODE_ENV: development
+            NODE_ENV: ${NODE_ENV}
             MONGODB_USERNAME: ${MONGODB_USERNAME}
             MONGODB_PASSWORD: ${MONGODB_PASSWORD}
             MONGODB_DATABASE: ${MONGODB_DATABASE}
             GOOGLE_BOOKS_API_KEY: ${GOOGLE_BOOKS_API_KEY}
         ports:
-            - 4000:4000
+            - 4000:4000 # for server
+            - 8000:8000 # for devtools
         volumes:
             - ./src:/usr/app/src
         depends_on:

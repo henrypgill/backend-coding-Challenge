@@ -40,40 +40,68 @@ export class BooksService {
         const booksCursor = await this.getBooksById(insertedIds);
         return booksCursor;
     }
-    }
 
-    async updateStock(books: StockUpdateBook[]): Promise<Book[]> {
-        const updateBooks: StockUpdateBooks = {};
-        for (let book of books) {
-            Object.defineProperty(updateBooks, book.bookId, book.count);
-        }
-
-        type StockUpdateBooks = { [key: string]: number };
-
-        const bookObjectIds: ObjectId[] = books.map(
-            (book) => new ObjectId(book.bookId),
+    async updateStockCount(
+        updateBook: StockUpdateBook,
+    ): Promise<Book | undefined> {
+        const cursor = await database.books.updateOne(
+            { _id: new ObjectId(updateBook.bookId) },
+            { $inc: { stockCount: updateBook.count } },
         );
-
-        const cursor = await database.books.aggregate<Book>([
-            {
-                $match: {
-                    _id: {
-                        $in: bookObjectIds,
-                    },
-                },
-            },
-            {
-                $project: {
-                    _id: true,
-                    stockCount: true,
-                },
-            },
-            {
-                $addFields: {
-                    stockCount: { $add: ["$stockCount", updateBooks["$_id"]] },
-                },
-            },
-        ]);
-        return cursor.toArray();
+        if (cursor.modifiedCount === 0) {
+            return undefined;
+        }
+        const updatedBook = await this.getBookById(
+            new ObjectId(updateBook.bookId),
+        );
+        return updatedBook;
     }
+
+    async updateStockCounts(books: StockUpdateBook[]): Promise<Book[]> {
+        const updatedBooks: Book[] = [];
+        books.forEach(async (book) => {
+            const updatedBook = await this.updateStockCount(book);
+            updatedBook && updatedBooks.push(updatedBook);
+        });
+        return updatedBooks;
+    }
+
+    // async updateStockCounts(books: StockUpdateBook[]): Promise<Book[]> {
+    //     const updateBooks: StockUpdateBooks = {};
+    //     for (let book of books) {
+    //         Object.defineProperty(updateBooks, book.bookId, {
+    //             value: book.count,
+    //             writable: true,
+    //             enumerable: true,
+    //             configurable: true
+    //         });
+    //     }
+    //     type StockUpdateBooks = { [key: string]: number };
+
+    //     const bookObjectIds: ObjectId[] = books.map(
+    //         (book) => new ObjectId(book.bookId),
+    //     );
+
+    //     const cursor = await database.books.aggregate<Book>([
+    //         {
+    //             $match: {
+    //                 _id: {
+    //                     $in: bookObjectIds,
+    //                 },
+    //             },
+    //         },
+    //         {
+    //             $project: {
+    //                 _id: true,
+    //                 stockCount: true,
+    //             },
+    //         },
+    //         {
+    //             $addFields: {
+    //                 stockCount: { $add: ["$stockCount", updateBooks["$_id"]] },
+    //             },
+    //         },
+    //     ]);
+    //     return cursor.toArray();
+    // }
 }

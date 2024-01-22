@@ -13,15 +13,15 @@ export class BooksController {
 
     @Get("/")
     async getAllBooks(): Promise<Book[]> {
-        return this.bookService.getBooks();
+        return await this.bookService.getBooks();
     }
 
-    @Get("/id?ids=:ids")
-    async getBooksById(@Query("idString") idString: string): Promise<Book[]> {
+    @Get("/id")
+    async getBooksById(@Query("ids") idString: string): Promise<Book[]> {
         const bookIds: ObjectId[] = idString
             .split(",")
             .map((id) => new ObjectId(id));
-        return this.bookService.getBooksById(bookIds);
+        return await this.bookService.getBooksById(bookIds);
     }
 
     @Post("/")

@@ -13,8 +13,8 @@ export class AuthorsController {
         return this.AuthorsService.getAuthors();
     }
 
-    @Get("/id?ids=:ids")
-    async getBooksById(@Query("idString") idString: string): Promise<Author[]> {
+    @Get("/id")
+    async getAuthorsById(@Query("ids") idString: string): Promise<Author[]> {
         const authorIds: ObjectId[] = idString
             .split(",")
             .map((id) => new ObjectId(id));

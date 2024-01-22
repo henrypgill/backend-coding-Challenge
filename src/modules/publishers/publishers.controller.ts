@@ -4,23 +4,23 @@ import type { POST_CreatePublisherBody } from "../../types/api";
 import type { Publisher } from "../../types/book";
 import { PublishersService } from "./publishers.service";
 
-@Controller()
+@Controller("publishers")
 export class PublishersController {
     constructor(private readonly publisherService: PublishersService) {}
 
     @Get("/")
     async getAllPublishers(): Promise<Publisher[]> {
-        return this.publisherService.getPublishers();
+        return await this.publisherService.getPublishers();
     }
 
-    @Get("/id?ids=:ids")
+    @Get("/id")
     async getPublishersById(
-        @Query("idString") idString: string,
+        @Query("ids") idString: string,
     ): Promise<Publisher[]> {
         const publisherIds: ObjectId[] = idString
             .split(",")
             .map((id) => new ObjectId(id));
-        return this.publisherService.getPublishersById(publisherIds);
+        return await this.publisherService.getPublishersById(publisherIds);
     }
 
     @Post("/")

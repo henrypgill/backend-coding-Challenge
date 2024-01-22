@@ -16,6 +16,13 @@ export class BooksService {
         return books;
     }
 
+    async getBookById(bookId: ObjectId): Promise<Book | undefined> {
+        const cursor = await database.books.findOne<Book>({
+            _id: bookId,
+        });
+        return cursor ?? undefined;
+    }
+
     async getBooksById(bookIds: ObjectId[]): Promise<Book[]> {
         const cursor = await database.books.find<Book>({
             _id: { $in: bookIds },

@@ -8,8 +8,6 @@ import { DummyDataService } from "./dummyData.service";
 @Module({
     imports: [BooksModule, AuthorsModule, PublishersModule],
     controllers: [DummyDataController],
-    providers: [
-        DummyDataService
-    ],
+    providers: [DummyDataService],
 })
 export class DummyDataModule {}

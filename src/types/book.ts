@@ -10,14 +10,17 @@ export interface Book {
     publishYear: number;
     stockCount: number;
 }
+export type BookWithout_id = Omit<Book, "_id">;
 
 export interface Author {
-    _id: ObjectId;
+    _id?: ObjectId;
     name: string;
 }
+export type AuthorWithout_id = Omit<Author, "_id">;
 
 export interface Publisher {
-    _id: ObjectId;
+    _id?: ObjectId;
     name: string;
     location: string;
 }
+export type PublisherWithout_id = Omit<Publisher, "_id">;

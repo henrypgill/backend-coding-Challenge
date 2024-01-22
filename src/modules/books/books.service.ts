@@ -34,8 +34,6 @@ export class BooksService {
     }
 
     async updateStock(books: StockUpdateBook[]): Promise<Book[]> {
-        // const updateBooks: StockUpdateBookWithObjectId[] = books.map((book) => {return {...book, _id: new ObjectId(book.bookId) }})
-
         const updateBooks: StockUpdateBooks = {};
         for (let book of books) {
             Object.defineProperty(updateBooks, book.bookId, book.count);

@@ -16,13 +16,14 @@ async function connectToDatabase() {
 }
 
 async function bootstrap() {
-    await connectToDatabase();
-
-    const app = await NestFactory.create(AppModule);
-
     const port = process.env.PORT || 4000;
+    console.log("Starting up NestJS server on port: " + port);
+    const app = await NestFactory.create(AppModule, {
+        snapshot: true,
+    });
     await app.listen(port);
     console.log("App listening on port: " + port);
 }
 
+await connectToDatabase();
 await bootstrap();

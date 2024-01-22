@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common";
 import { ObjectId } from "mongodb";
-import { database } from "..";
-import type { StockUpdateBook } from "../types/api";
-import type { Book } from "../types/book";
+import { database } from "../..";
+import type { StockUpdateBook } from "../../types/api";
+import type { Book } from "../../types/book";
 
 @Injectable()
-export class BookService {
+export class BooksService {
     welcome(): string {
         return "Welcome!";
     }

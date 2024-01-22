@@ -1,6 +1,7 @@
 import { ObjectId } from "mongodb";
-import type { Author, Book, Publisher } from "../types/book";
+import type { Book, Author, Publisher } from "../../types/book";
 import { faker } from "@faker-js/faker";
+
 export interface DummyData {
     books: Book[];
     authors: Author[];

@@ -18,5 +18,4 @@ export function setupMongoClient(database_url: string) {
         authors,
         publishers,
     };
-
 }

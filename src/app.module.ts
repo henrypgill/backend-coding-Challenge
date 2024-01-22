@@ -1,17 +1,23 @@
 import { Module, type MiddlewareConsumer } from '@nestjs/common';
+import { DevtoolsModule } from '@nestjs/devtools-integration';
 import { AppLoggerMiddleware } from './core/AppLogger';
-import { AppService } from './app.service';
+import { BooksModule } from './modules/books/books.module';
+import { AuthorsModule } from './modules/authors/authors.module';
+import { PublishersModule } from './modules/publishers/publishers.module';
 import { AppController } from './app.controller';
-import { DummyDataController } from './dummyData/dummyData.controller';
-import { AuthorService } from './services/author.service';
-import { BookService } from './services/book.service';
-import { PublisherService } from './services/publisher.service';
-import { DummyDataModule } from './dummyData/dummyData.module';
+import { AppService } from './app.service';
 
 @Module({
-    imports: [DummyDataModule],
-    controllers: [AppController, DummyDataController],
-    providers: [AppService, BookService, AuthorService, PublisherService],
+    imports: [
+        DevtoolsModule.register({
+          http: true
+        }),
+        BooksModule,
+        AuthorsModule,
+        PublishersModule,
+    ],
+    controllers: [AppController],
+    providers: [AppService],
 })
 export class AppModule {
     configure(consumer: MiddlewareConsumer): void {

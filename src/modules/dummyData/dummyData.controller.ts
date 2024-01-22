@@ -1,16 +1,17 @@
-import { Body, Controller, Post } from '@nestjs/common';
-import getDummyData, { type DummyDataParams } from './dummyData';
-import { AuthorService } from '../services/author.service';
-import type { Author, Book, Publisher } from '../types/book';
-import { BookService } from '../services/book.service';
-import { PublisherService } from '../services/publisher.service';
+import { Controller, Post, Body } from "@nestjs/common";
+import type { Book, Author, Publisher } from "src/types/book";
+import { AuthorsService } from "../authors/authors.service";
+import { BooksService } from "../books/books.service";
+import { PublishersService } from "../publishers/publishers.service";
+import getDummyData, { type DummyDataParams } from "./dummyData";
+
 
 @Controller('/dummy-data')
 export class DummyDataController {
     constructor(
-        private readonly authorService: AuthorService,
-        private readonly bookService: BookService,
-        private readonly publisherService: PublisherService,
+        private readonly authorService: AuthorsService,
+        private readonly bookService: BooksService,
+        private readonly publisherService: PublishersService,
         ) {}
 
     @Post('/populate-database')

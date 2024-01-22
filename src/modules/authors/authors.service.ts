@@ -1,10 +1,10 @@
 import { Injectable } from "@nestjs/common";
-import { database } from "..";
-import type { Author } from "../types/book";
+import { database } from "../..";
+import type { Author } from "../../types/book";
 import { ObjectId } from "mongodb";
 
 @Injectable()
-export class AuthorService {
+export class AuthorsService {
     async getAuthors(): Promise<Author[]> {
         const cursor = await database.authors.find();
         const Authors = cursor.toArray();

@@ -34,9 +34,16 @@ export class BooksController {
     }
 
     @Patch("/stock")
-    async updateStockCount(
+    async updateStockCounts(
         @Body() { books }: PATCH_UpdateStockCount,
     ): Promise<Book[]> {
-        return await this.bookService.updateStock(books);
+        if (books.length === 0) {
+            return [];
+        } else if (books.length === 1) {
+            const book = await this.bookService.updateStockCount(books[0]);
+            return book ? [book] : [];
+        } else {
+            return await this.bookService.updateStockCounts(books);
+        }
     }
 }

@@ -6,5 +6,6 @@ import { BooksService } from "./books.service";
     imports: [],
     controllers: [BooksController],
     providers: [BooksService],
+    exports: [BooksService],
 })
 export class BooksModule {}

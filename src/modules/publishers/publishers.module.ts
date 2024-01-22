@@ -6,5 +6,6 @@ import { PublishersService } from "./publishers.service";
     imports: [],
     controllers: [PublishersController],
     providers: [PublishersService],
+    exports: [PublishersService],
 })
 export class PublishersModule {}

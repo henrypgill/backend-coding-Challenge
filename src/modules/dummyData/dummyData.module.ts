@@ -1,11 +1,12 @@
 import { Module } from "@nestjs/common";
-import { AuthorsService } from "../authors/authors.service";
-import { BooksService } from "../books/books.service";
-import { PublishersService } from "../publishers/publishers.service";
+import { AuthorsModule } from "../authors/authors.module";
+import { BooksModule } from "../books/books.module";
+import { PublishersModule } from "../publishers/publishers.module";
 import { DummyDataController } from "./dummyData.controller";
+import { DummyDataService } from "./dummyData.service";
 
 @Module({
-    imports: [],
+    imports: [BooksModule, AuthorsModule, PublishersModule],
     controllers: [DummyDataController],
     providers: [
         DummyDataService

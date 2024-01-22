@@ -8,7 +8,7 @@
         "build": "tsc",
         "format:check": "prettier --check .",
         "format": "prettier --write .",
-        "lint": "eslint",
+        "lint": "eslint --ext .ts src/",
         "start": "bun run src/index.ts",
         "type-check": "tsc --noEmit",
         "type-check:watch": "tsc --noEmit --watch",

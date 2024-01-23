@@ -41,13 +41,21 @@ export class BooksController {
     async updateStockCounts(
         @Body() { books }: PATCH_UpdateStockCount,
     ): Promise<Book[]> {
+        let updatedBooks: Book[] = [];
         if (books.length === 0) {
             return [];
         } else if (books.length === 1) {
             const book = await this.bookService.updateStockCount(books[0]);
-            return book ? [book] : [];
+            if (book) updatedBooks = [book];
         } else {
-            return await this.bookService.updateStockCounts(books);
+            updatedBooks = await this.bookService.updateStockCounts(books);
         }
+        const lowStockBooks = await this.bookService.checkStockCounts();
+        if (lowStockBooks.length > 0) {
+            this.stockGateway.stockService.broadcastLowStockAlert(
+                lowStockBooks,
+            );
+        }
+        return updatedBooks;
     }
 }

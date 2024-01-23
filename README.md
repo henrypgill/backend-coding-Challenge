@@ -1,6 +1,17 @@
 # Jentis Coding Challenge
 In this repository you will find my solution to the JENTIS interview coding challenge. I quite enjoyed this challenge, and it allowed me to use bun and docker together for the first time.
 
+## Documentation
+The documentation for the api can be found below:
+### Books
+https://documenter.getpostman.com/view/28257896/2s9Yynjidd
+### Authors
+https://documenter.getpostman.com/view/28257896/2s9Yynjidf
+### Publishers
+https://documenter.getpostman.com/view/28257896/2s9Yynjidg
+### Generating Dummy Data
+https://documenter.getpostman.com/view/28257896/2s9Yynjidh
+
 ## Decisions
 ### Bun
 I chose to use bun as the runtime for this over node.js because I prefer it. I find the developer experience to be much nicer as it requires less dependencies, scripts are more concise, and it runs much faster which speeds up container build times and ci/cd pipelines (even though they were not implemented in the end).

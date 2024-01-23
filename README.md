@@ -2,15 +2,8 @@
 In this repository you will find my solution to the JENTIS interview coding challenge. I quite enjoyed this challenge, and it allowed me to use bun and docker together for the first time.
 
 ## Documentation
-The documentation for the api can be found below:
-### Books
-https://documenter.getpostman.com/view/28257896/2s9Yynjidd
-### Authors
-https://documenter.getpostman.com/view/28257896/2s9Yynjidf
-### Publishers
-https://documenter.getpostman.com/view/28257896/2s9Yynjidg
-### Generating Dummy Data
-https://documenter.getpostman.com/view/28257896/2s9Yynjidh
+The documentation for the api can be found here: https://www.postman.com/dark-crater-116584/workspace/jentis-coding-challenge
+Navigate to the APIs tab on the left to view the documentation for the different collections.
 
 ## Decisions
 ### Bun

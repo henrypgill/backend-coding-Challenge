@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "359203be-b07c-4d7a-b4dc-d39deb3b99ab",
+		"name": "Authors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "28257896-359203be-b07c-4d7a-b4dc-d39deb3b99ab"
+	},
+	"item": [
+		{
+			"name": "get all authors",
+			"id": "2727ed44-9382-4bf1-9b7f-4d0fe9d21fe0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get authors by ids",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0fed61f2-7176-47dd-96e8-f6fdde0a90f6",
+						"exec": [
+							"pm.sendRequest(\"http://localhost:4000/authors\", function (err, response) {",
+							"    const authors = response.json()",
+							"    const authorIds = authors.slice(Math.ceil(authors.length / 50)).map(author => author._id)",
+							"    const authorIdsString = authorIds.join(\",\")",
+							"    pm.collectionVariables.set(\"author_ids\", authorIdsString);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1f96ae56-bb3b-4193-a255-379a716f6263",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/authors/id?ids={{author_ids}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"authors",
+						"id"
+					],
+					"query": [
+						{
+							"key": "ids",
+							"value": "{{author_ids}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create authors",
+			"id": "81ea88fd-6129-470b-9eb8-a9aaa0a22f0d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"authors\": [\n    \n{\n    \"name\": \"fake author name\"\n}\n]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"authors"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "383cbc67-11ba-4bf4-9ab8-24ccaa220653",
+			"key": "author_ids",
+			"value": "author_ids"
+		},
+		{
+			"id": "79502f56-edd2-465e-aed4-377060de2558",
+			"key": "author_ids",
+			"value": ""
+		}
+	]
+}

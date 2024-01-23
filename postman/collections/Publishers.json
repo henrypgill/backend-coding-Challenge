@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "19a735ef-f444-4af5-b45f-bf762586df20",
+		"name": "Publishers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "28257896-19a735ef-f444-4af5-b45f-bf762586df20"
+	},
+	"item": [
+		{
+			"name": "get all publishers",
+			"id": "9c4fdce1-9919-4ab6-83d8-a95f756f3fe6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/publishers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"publishers"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "64cad133-0fdc-4996-bcc2-d246ab5558b3",
+					"name": "get all publishers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/publishers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"publishers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"697-JoSUKVOlTNHIzKx3Q69PfpE7FfQ\""
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Jan 2024 11:35:29 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1687"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"65af8ad23af1578c54a7e72f\",\n        \"name\": \"Upton Inc\",\n        \"location\": \"Estonia\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e730\",\n        \"name\": \"Huels, Ward and Kunze\",\n        \"location\": \"Philippines\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e731\",\n        \"name\": \"Quitzon LLC\",\n        \"location\": \"Greenland\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e732\",\n        \"name\": \"Brown - Bednar\",\n        \"location\": \"Suriname\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e733\",\n        \"name\": \"McDermott - Jacobs\",\n        \"location\": \"Nigeria\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e734\",\n        \"name\": \"Rogahn - Stroman\",\n        \"location\": \"Botswana\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e735\",\n        \"name\": \"Gleason and Sons\",\n        \"location\": \"Sierra Leone\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e736\",\n        \"name\": \"Lynch Inc\",\n        \"location\": \"Cocos (Keeling) Islands\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e737\",\n        \"name\": \"Erdman Group\",\n        \"location\": \"Seychelles\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e738\",\n        \"name\": \"Nolan - Dibbert\",\n        \"location\": \"Jamaica\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1001\",\n        \"name\": \"Heller - Lubowitz\",\n        \"location\": \"Liechtenstein\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1002\",\n        \"name\": \"Roberts Inc\",\n        \"location\": \"Tonga\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1003\",\n        \"name\": \"Morar - Abbott\",\n        \"location\": \"Anguilla\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1004\",\n        \"name\": \"Herman - Mueller\",\n        \"location\": \"Saint Pierre and Miquelon\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1005\",\n        \"name\": \"Kilback - Kassulke\",\n        \"location\": \"San Marino\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1006\",\n        \"name\": \"Leuschke - Feest\",\n        \"location\": \"Gibraltar\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1007\",\n        \"name\": \"Lesch, Pfeffer and Langworth\",\n        \"location\": \"New Caledonia\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1008\",\n        \"name\": \"Ernser - Von\",\n        \"location\": \"Barbados\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1009\",\n        \"name\": \"Purdy - Olson\",\n        \"location\": \"Malta\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac100a\",\n        \"name\": \"Barton - Waters\",\n        \"location\": \"Uruguay\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get publishers by ids",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "54a4e8db-f0b3-4e93-bc4c-63b5988a631e",
+						"exec": [
+							"pm.sendRequest(\"http://localhost:4000/publishers\", function (err, response) {",
+							"    const publishers = response.json()",
+							"    const publisherIds = publishers.slice(Math.ceil(publishers.length / 50)).map(pub => pub._id)",
+							"    const publisherIdsString = publisherIds.join(\",\")",
+							"    pm.collectionVariables.set(\"publisher_ids\", publisherIdsString);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2a00f0b3-fbcb-4a91-918f-e87704548f8b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/publishers/id?ids={{publisher_ids}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"publishers",
+						"id"
+					],
+					"query": [
+						{
+							"key": "ids",
+							"value": "{{publisher_ids}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a39cd42c-8d8a-495e-ba8b-27b062d55f98",
+					"name": "get publishers by ids",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/publishers/id?ids={{publisher_ids}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"publishers",
+								"id"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{publisher_ids}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"64c-uMx4sQj3ei1l6/hSfSK1DQ/Z4OM\""
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Jan 2024 11:35:33 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1612"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"65af8ad23af1578c54a7e730\",\n        \"name\": \"Huels, Ward and Kunze\",\n        \"location\": \"Philippines\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e731\",\n        \"name\": \"Quitzon LLC\",\n        \"location\": \"Greenland\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e732\",\n        \"name\": \"Brown - Bednar\",\n        \"location\": \"Suriname\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e733\",\n        \"name\": \"McDermott - Jacobs\",\n        \"location\": \"Nigeria\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e734\",\n        \"name\": \"Rogahn - Stroman\",\n        \"location\": \"Botswana\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e735\",\n        \"name\": \"Gleason and Sons\",\n        \"location\": \"Sierra Leone\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e736\",\n        \"name\": \"Lynch Inc\",\n        \"location\": \"Cocos (Keeling) Islands\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e737\",\n        \"name\": \"Erdman Group\",\n        \"location\": \"Seychelles\"\n    },\n    {\n        \"_id\": \"65af8ad23af1578c54a7e738\",\n        \"name\": \"Nolan - Dibbert\",\n        \"location\": \"Jamaica\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1001\",\n        \"name\": \"Heller - Lubowitz\",\n        \"location\": \"Liechtenstein\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1002\",\n        \"name\": \"Roberts Inc\",\n        \"location\": \"Tonga\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1003\",\n        \"name\": \"Morar - Abbott\",\n        \"location\": \"Anguilla\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1004\",\n        \"name\": \"Herman - Mueller\",\n        \"location\": \"Saint Pierre and Miquelon\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1005\",\n        \"name\": \"Kilback - Kassulke\",\n        \"location\": \"San Marino\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1006\",\n        \"name\": \"Leuschke - Feest\",\n        \"location\": \"Gibraltar\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1007\",\n        \"name\": \"Lesch, Pfeffer and Langworth\",\n        \"location\": \"New Caledonia\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1008\",\n        \"name\": \"Ernser - Von\",\n        \"location\": \"Barbados\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac1009\",\n        \"name\": \"Purdy - Olson\",\n        \"location\": \"Malta\"\n    },\n    {\n        \"_id\": \"65afa47d3b109dd179ac100a\",\n        \"name\": \"Barton - Waters\",\n        \"location\": \"Uruguay\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "create publishers",
+			"id": "3a2a4b7c-8943-4663-901c-cdc9f824c72a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"publishers\": [\n    {\n    \"name\": \"Fake Publisher Name\",\n    \"location\": [\"fake publisher location\"]\n}\n]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/publishers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"publishers"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "89ad0500-c2ee-4a76-88fd-69dd9a10385b",
+					"name": "create publishers",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"publishers\": [\n    {\n    \"name\": \"Fake Publisher Name\",\n    \"location\": [\"fake publisher location\"]\n}\n]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/publishers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"publishers"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68-ZMEcZ5mVOY0L8kytPbTSlT95eNA\""
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 23 Jan 2024 11:35:37 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"65afa48a3b109dd179ac119b\",\n        \"name\": \"Fake Publisher Name\",\n        \"location\": [\n            \"fake publisher location\"\n        ]\n    }\n]"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "300bec53-e951-4688-b913-ff872dd26643",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a945569b-3d29-47d4-855b-4c958ba81b0b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e43455b7-422a-4dde-b371-68a9369a9171",
+			"key": "publisher_ids",
+			"value": "publisherIds"
+		}
+	]
+}

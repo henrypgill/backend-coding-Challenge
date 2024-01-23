@@ -16,12 +16,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/publishers",
-					"protocol": "http",
+					"raw": "{{base url}}/publishers",
 					"host": [
-						"localhost"
+						"{{base url}}"
 					],
-					"port": "4000",
 					"path": [
 						"publishers"
 					]
@@ -103,12 +101,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/publishers/id?ids={{publisher_ids}}",
-					"protocol": "http",
+					"raw": "{{base url}}/publishers/id?ids={{publisher_ids}}",
 					"host": [
-						"localhost"
+						"{{base url}}"
 					],
-					"port": "4000",
 					"path": [
 						"publishers",
 						"id"
@@ -196,12 +192,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/publishers",
-					"protocol": "http",
+					"raw": "{{base url}}/publishers",
 					"host": [
-						"localhost"
+						"{{base url}}"
 					],
-					"port": "4000",
 					"path": [
 						"publishers"
 					]

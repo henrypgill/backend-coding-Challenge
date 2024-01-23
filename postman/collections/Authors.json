@@ -16,12 +16,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/authors",
-					"protocol": "http",
+					"raw": "{{base url}}/authors",
 					"host": [
-						"localhost"
+						"{{base url}}"
 					],
-					"port": "4000",
 					"path": [
 						"authors"
 					]
@@ -56,12 +54,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/authors/id?ids={{author_ids}}",
-					"protocol": "http",
+					"raw": "{{base url}}/authors/id?ids={{author_ids}}",
 					"host": [
-						"localhost"
+						"{{base url}}"
 					],
-					"port": "4000",
 					"path": [
 						"authors",
 						"id"
@@ -95,12 +91,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/authors",
-					"protocol": "http",
+					"raw": "{{base url}}/authors",
 					"host": [
-						"localhost"
+						"{{base url}}"
 					],
-					"port": "4000",
 					"path": [
 						"authors"
 					]

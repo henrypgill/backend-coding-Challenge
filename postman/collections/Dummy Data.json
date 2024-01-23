@@ -25,12 +25,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/dummy-data/populate-database",
-					"protocol": "http",
+					"raw": "{{base url}}/dummy-data/populate-database",
 					"host": [
-						"localhost"
+						"{{base url}}"
 					],
-					"port": "4000",
 					"path": [
 						"dummy-data",
 						"populate-database"

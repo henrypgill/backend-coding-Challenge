@@ -12,8 +12,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - name: Install modules
-              run: yarn
+              run: bun
             - name: Check code with Eslint
-              run: yarn lint
+              run: bun lint
             - name: Check types compile
-              run: yarn type-check
+              run: bun type-check

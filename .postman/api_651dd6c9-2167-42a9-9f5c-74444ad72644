@@ -17,7 +17,5 @@ files[] = {"id":"28257896-19a735ef-f444-4af5-b45f-bf762586df20","path":"Publishe
 [config.relations.collections.metaData]
 
 [config.relations.apiDefinition]
-files[] = {"path":"index.yaml","metaData":{}}
 
 [config.relations.apiDefinition.metaData]
-type = openapi:3

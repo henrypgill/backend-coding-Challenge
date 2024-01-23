@@ -1,9 +1,13 @@
 # Jentis Coding Challenge
 In this repository you will find my solution to the JENTIS interview coding challenge. I quite enjoyed this challenge, and it allowed me to use bun and docker together for the first time.
 
+## Running the service
+To run the service, you can use the `compose` script with npm/yarn/bun which will spin up the necessary docker containers. The docker service will be available on port 4000. The development database will be empty, however can be populated using the endpoint:
+`http://localhost:4000/dummy-data/populate-database`
+
 ## Documentation
 The documentation for the api can be found here: https://www.postman.com/dark-crater-116584/workspace/jentis-coding-challenge
-Navigate to the APIs tab on the left to view the documentation for the different collections.
+The documentation for individual collection can be viewed from the collections or API tab on the left, the documentation for the websocket is available within the websockets collection.
 
 ## Decisions
 ### Bun

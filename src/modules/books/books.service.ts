@@ -58,12 +58,18 @@ export class BooksService {
     }
 
     async updateStockCounts(books: StockUpdateBook[]): Promise<Book[]> {
-        const updatedBooks: Book[] = [];
-        books.forEach(async (book) => {
-            const updatedBook = await this.updateStockCount(book);
-            updatedBook && updatedBooks.push(updatedBook);
+        const updatedBooks = await Promise.all(
+            books.map((book) => this.updateStockCount(book)),
+        );
+
+        return updatedBooks.filter((book) => book !== undefined) as Book[];
+    }
+
+    async checkStockCounts(): Promise<Book[]> {
+        const cursor = await database.books.find<Book>({
+            stockCount: { $lte: 5 },
         });
-        return updatedBooks;
+        return cursor.toArray();
     }
 
     // async updateStockCounts(books: StockUpdateBook[]): Promise<Book[]> {

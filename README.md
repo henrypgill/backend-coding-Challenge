@@ -1,4 +1,8 @@
-Foreword
+# JENTIS Coding Challenge
+
+## Brief
+
+### Foreword
 
 For the following task act like you are a part of our team. This means doing all the things you think a good software developer and team member should do. What we exactly mean by this is intentionally left open as we are interested to see what you think a professional developer's job is.
 
@@ -6,7 +10,7 @@ You are allowed to use every programming language or technology you see fit and 
 
 Please make sure to dockerize your service and upload the docker-compose.yaml (including your service dependencies) as well.
 
-The Challenge
+### The Challenge
 
 Business Insights
 
@@ -14,7 +18,7 @@ A bookstore owner wants a very rudimentary software she can use to keep track of
 
 The job will be split between two developers. One junior dev will create the microservice (called service-notifier) that takes care of notifications and you will create the API and be the architect of data structures and interfaces.
 
-Task
+### Task
 
 Write a server with an API that takes care of storing and deleting books from stock. First, define all the properties the book will have. Then create an API (REST, GraphQl, or SOAP) that enables the bookstore owner to solve her problems described above.
 
@@ -32,4 +36,4 @@ If this challenge description would be a ticket/epic description is there someth
 
 Let me know if you have any questions!
 
-I wish you the best of luck.# Jenits-Challenge
+## Solution

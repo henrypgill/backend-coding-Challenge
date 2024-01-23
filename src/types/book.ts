@@ -11,6 +11,7 @@ export interface Book {
     stockCount: number;
 }
 export type BookWithout_id = Omit<Book, "_id">;
+export type BookStockCount = Pick<Book, "_id" | "stockCount" | "title">;
 
 export interface Author {
     _id?: ObjectId;

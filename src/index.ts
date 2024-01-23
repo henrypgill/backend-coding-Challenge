@@ -12,7 +12,7 @@ async function connectToDatabase() {
     } catch (error) {
         console.log(error);
     }
-    return db
+    return db;
 }
 async function bootstrap() {
     try {
@@ -26,8 +26,8 @@ async function bootstrap() {
         console.log("App listening on port: " + port);
     } catch (error) {
         fs.writeFileSync("graph.json", PartialGraphHost.toString() ?? "");
-    console.error(error);
-    process.exit(1);
+        console.error(error);
+        process.exit(1);
     }
 }
 
@@ -35,5 +35,5 @@ console.time("Server startup time");
 console.log("Starting up server.");
 export const database = await connectToDatabase();
 await bootstrap();
-console.log("Server started up successfully.")
+console.log("Server started up successfully.");
 console.timeEnd("Server startup time");

@@ -6,10 +6,14 @@ import type {
 } from "../../types/api";
 import type { Book } from "../../types/book";
 import { BooksService } from "./books.service";
+import { StockGateway } from "../stock/stock.gateway";
 
 @Controller("books")
 export class BooksController {
-    constructor(private readonly bookService: BooksService) {}
+    constructor(
+        private readonly bookService: BooksService,
+        private readonly stockGateway: StockGateway,
+    ) {}
 
     @Get("/")
     async getAllBooks(): Promise<Book[]> {
